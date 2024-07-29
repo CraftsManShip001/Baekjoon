@@ -1,0 +1,15 @@
+from collections import deque
+n, k = map(int, input().split())
+visited = [0 for _ in range((10 ** 5)+1)]
+an = deque()
+an.append(n)
+while an:
+    now = an.popleft()
+    if now == k:
+        print(visited[k])
+        break
+    arr = [now+1,now-1,now*2]
+    for i in arr:
+        if 0 <= i <= (10 ** 5) and visited[i] == 0: 
+            visited[i] = visited[now] + 1
+            an.append(i)
