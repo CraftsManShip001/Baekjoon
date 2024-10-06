@@ -1,5 +1,4 @@
 import sys
-sys.setrecursionlimit(10**9)
 from collections import deque
 input=sys.stdin.readline
 def bfs(now_x,now_y):
